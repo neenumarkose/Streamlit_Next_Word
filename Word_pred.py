@@ -123,13 +123,16 @@ if authentication_status:
   answer = []
   acc = []
   print(res['bert'].split("\n"))
-  for i in res['bert'].split("\n"):
+  for i in res['bert'].split(" "):
   	answer.append(i)
   answer_as_string = "    ".join(answer)
 
-
   if st.button('Predict'):
-      st.text_area("Predicted List is Here",answer_as_string,key="predicted_list")
+      st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
+    
+  res = main.get_all_predictions(input_text, top_clean=int(top_k))
+  st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
+  
   st.image('https://imageio.forbes.com/blogs-images/cognitiveworld/files/2019/06/types-of-AI.jpg?format=jpg&width=960',use_column_width=True)
 
  except Exception as e:
