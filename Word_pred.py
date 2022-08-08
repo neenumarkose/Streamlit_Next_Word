@@ -102,8 +102,8 @@ if authentication_status:
   try:
     input_text += ' <mask>'
     res = get_all_predictions(input_text, top_clean=int(top_k))
-    #return res
-    return response_class(response=res)
+    return res
+    #return response_class(response=res)
   except Exception as error:
     pass
 
