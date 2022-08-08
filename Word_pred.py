@@ -98,13 +98,13 @@ if authentication_status:
       accuracy = (c/(res-2)) * 100
   return {'bert': bert,'input_length':res-1, 'predicted_words_length':c,'predictied_words_used':word_predicted,'accuracy':accuracy}
 
- def get_prediction_eos(input_text):
-  try:
-    input_text += ' <mask>'
-    res = get_all_predictions(input_text, top_clean=int(top_k))
-    return res
-  except Exception as error:
-    pass
+ #def get_prediction_eos(input_text):
+  #try:
+    #input_text += ' <mask>'
+    #res = get_all_predictions(input_text, top_clean=int(top_k))
+    #return res
+  #except Exception as error:
+    #pass
 
  try:
 
@@ -130,8 +130,6 @@ if authentication_status:
   if st.button('Predict'):
       st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
     
-  res = main.get_all_predictions(input_text, top_clean=int(top_k))
-  st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
   
   st.image('https://imageio.forbes.com/blogs-images/cognitiveworld/files/2019/06/types-of-AI.jpg?format=jpg&width=960',use_column_width=True)
 
