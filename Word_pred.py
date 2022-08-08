@@ -113,8 +113,7 @@ if authentication_status:
 
   top_k = st.sidebar.slider("Select How many words do you need", 1 , 10, 3) #some times it is possible to have less words
   print(top_k)
-  #model_name = st.sidebar.selectbox(label='Select Model to Apply',  options=['BERT', 'XLNET'], index=0,  key = "model_name")
-
+  
   bert_tokenizer, bert_model  = load_model('BERT') 
   input_text = st.text_area("Enter your text here")
 
@@ -130,6 +129,9 @@ if authentication_status:
 
   if st.button('Predict'):
       st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
+    
+  full_sentence = input_text.join(answer_as_string)
+  full_sentence = st.text_area ("Your full sentence is..", full_sentence, key="full_sentence")
       
   st.image('https://imageio.forbes.com/blogs-images/cognitiveworld/files/2019/06/types-of-AI.jpg?format=jpg&width=960',use_column_width=True)
 
