@@ -130,8 +130,8 @@ if authentication_status:
   if st.button('Predict'):
       st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
     
-  full_sentence = input_text.join(word_predicted)
-  full_sentence = st.text_area ("Your full sentence is..", full_sentence, key="full_sentence")
+  # predicted_word_used = 
+  # full_sentence = st.text_area ("Your full sentence is..", full_sentence, key="full_sentence")
       
   st.image('https://imageio.forbes.com/blogs-images/cognitiveworld/files/2019/06/types-of-AI.jpg?format=jpg&width=960',use_column_width=True)
 
