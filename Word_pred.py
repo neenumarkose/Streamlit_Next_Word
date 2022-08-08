@@ -129,12 +129,6 @@ if authentication_status:
 
   if st.button('Predict'):
       st.text_area("Predicted List is Here", answer_as_string, key="predicted_list")
-    
-  word_used = []
-  for i in answer_as_string:
-    answer.append(i+1)
-  word_selected = "    ".join(word_used)
-  selected_words = st.text_area ("Your selected list is..", word_selected, key="full_sentence")
       
   st.image('https://imageio.forbes.com/blogs-images/cognitiveworld/files/2019/06/types-of-AI.jpg?format=jpg&width=960',use_column_width=True)
 
