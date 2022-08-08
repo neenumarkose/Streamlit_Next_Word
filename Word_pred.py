@@ -98,13 +98,13 @@ if authentication_status:
       accuracy = (c/(res-2)) * 100
   return {'bert': bert,'input_length':res-1, 'predicted_words_length':c,'predictied_words_used':word_predicted,'accuracy':accuracy}
 
- #def get_prediction_eos(input_text):
-  #try:
-    #input_text += ' <mask>'
-    #res = get_all_predictions(input_text, top_clean=int(top_k))
-    #return res
-  #except Exception as error:
-    #pass
+ def get_prediction_eos(input_text):
+  try:
+    input_text += ' <mask>'
+    res = get_all_predictions(input_text, top_clean=int(top_k))
+    return res
+  except Exception as error:
+    pass
 
  try:
 
